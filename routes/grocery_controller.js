@@ -108,7 +108,7 @@ exports.getGroceries = function(req, res){
                 console.log(grocery[0]); //returns undefined
                 for( var i =0;i< grocery.length;i++ ) {
                 var item = grocery[i];
-                message = message + '<li>' + item.quantity + ' ' + item.name + '  <a href="/updateGroceryAsBoughtAddBill/' + item._id + '">Add Bill</a>' + '  <a href="/updateGroceryAsBought/' + item._id + '">Deactivate</a>' + '  <a href="/deleteGrocery/' + item._id + '">Remove</a></li>';
+                message = message + '<li>' + item.quantity + ' ' + item.name + '  <a href="/updateGroceryAsBoughtAddBill/' + item._id + '">Purchased</a>' + '  <a href="/updateGroceryAsBought/' + item._id + '">Deactivate</a>' + '  <a href="/deleteGrocery/' + item._id + '">Remove</a></li>';
                 }
                 message = message +'</ul>';
                 res.send(message);
@@ -135,7 +135,7 @@ exports.getGroceriesNotBought = function(req, res){
                 console.log(grocery[0]); //returns undefined
                 for( var i =0;i< grocery.length;i++ ) {
                 var item = grocery[i];
-                message = message + '<li>' + item.quantity + ' ' + item.name + '  <a href="/updateGroceryAsBoughtAddBill/' + item._id + '">Add Bill</a>' + '  <a href="/updateGroceryAsBought/' + item._id + '">Deactivate</a>' + '  <a href="/deleteGrocery/' + item._id + '">Remove</a></li>';
+                message = message + '<li>' + item.quantity + ' ' + item.name + '  <a href="/updateGroceryAsBoughtAddBill/' + item._id + '">Purchased</a>' + '  <a href="/updateGroceryAsBought/' + item._id + '">Deactivate</a>' + '  <a href="/deleteGrocery/' + item._id + '">Remove</a></li>';
                 }
                 message = message +'</ul>';
                 res.send(message);
