@@ -303,6 +303,7 @@ app.post('/bill_add_pg', isLoggedIn, function(req, res) {
 })
 
 app.post('/bill_add_new', bill_controller.addNew);
+app.post('/grocery_bill_add_new', bill_controller.groceryAddNew);
 app.post('/bill_add_existing', pay_controller.asgnExistingBill);
 
 app.get('/pay_add', function(req, res) {
@@ -359,8 +360,8 @@ app.post('/grocery_add', isLoggedIn, function(req, res){
 app.put('/grocery_add', grocery_controller.addGrocery);
 
 app.get('/deleteGrocery/:id', grocery_controller.deleteGrocery);
-app.get('/updateGroceryAsBought/:id', grocery_controller.updateGroceryAsBought);
 app.get('/updateGroceryAsBoughtAddBill/:id', grocery_controller.updateGroceryAsBoughtAddBill);
+app.get('/updateGroceryAsBought/:id', grocery_controller.updateGroceryAsBought);
 app.get('/reactivateGroceryList/:id', grocery_controller.reactivateGrocery);
 app.get('/getGrocerylist', grocery_controller.getGroceries);
 app.get('/getGroceryListNotBought', grocery_controller.getGroceriesNotBought);
