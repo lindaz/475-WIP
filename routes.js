@@ -287,6 +287,14 @@ app.get('/bills', isLoggedIn, function(req, res){
   });
 })
 
+app.get('/grocery_bill/:name', isLoggedIn, function(req, res){
+  res.render('grocery_bill_add', {
+    user: this_user,
+    members: this_user.members,
+    bill_name: req.params.name
+  });
+})
+
 app.post('/bill_add_pg', isLoggedIn, function(req, res) {
   res.render('bill_add', {
     user: this_user,
