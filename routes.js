@@ -352,6 +352,7 @@ app.put('/grocery_add', grocery_controller.addGrocery);
 
 app.get('/deleteGrocery/:id', grocery_controller.deleteGrocery);
 app.get('/updateGroceryAsBought/:id', grocery_controller.updateGroceryAsBought);
+app.get('/updateGroceryAsBoughtAddBill/:id', grocery_controller.updateGroceryAsBoughtAddBill);
 app.get('/reactivateGroceryList/:id', grocery_controller.reactivateGrocery);
 app.get('/getGrocerylist', grocery_controller.getGroceries);
 app.get('/getGroceryListNotBought', grocery_controller.getGroceriesNotBought);
