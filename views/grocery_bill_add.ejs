@@ -46,6 +46,23 @@
         <a href="/chat" class="tooltip" title="CHAT"><img src="/images/sidebar-icon_chat.png" title=""></a>
       </div> <!-- sidebar -->
 
+      <div class="content-dash">
+        <form action="/bill_add_new" method="post">
+          Bill Name: <input id="bill_name" name ="bill_name" type="text" value="<%= bill_name %>" placeholder="Bill Name"/><br>
+          Total Amount of Bill: <input id="amount" name="amount" type="text" placeholder="Amount"/><br>
+          Date Paid: <input id="date" name="date" type="date" placeholder="MM/DD/YYYY"><br>
+          Paid By: <select id="user_name" name="user_name"> 
+            <% for(var i=0; i<members.length; i++) {%>
+             <option value="<%= members[i] %>"> <%= members[i] %> </option>
+          <% } %><br>
+          </select><br>
+          Charge To: <br>
+          <% for(var i=0; i<members.length; i++) {%>
+           <input type="checkbox" value="<%= members[i] %>" name="payer" class="payer_class" checked><%= members[i] %> <br>
+          <% } %><br>
+          <input id="partial_amount" name="partial_amount" type="hidden" placeholder="Partial Amount"/><br>
+          <input id="bill-formb"  type="submit" value="Add Bill"/>
+        </form>
 
         <div id="test" style="color:blue">.</div>
 
