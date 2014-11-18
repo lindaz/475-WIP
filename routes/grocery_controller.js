@@ -60,6 +60,22 @@ exports.updateGroceryAsBought = function(req, res) {
         );
 }
 
+exports.updateGroceryAsBoughtAddBill = function(req, res) {
+    console.log("**********");
+    console.log(req.params.id);
+    console.log("********");
+    grocerylist.findByIdAndUpdate({_id: req.params.id}, 
+        { bought: "BOUGHT"
+    }, function(err, docs) {
+        if (err) res.json(err);
+        else 
+            {req.params.id
+                consolee.log(docs);
+                res.redirect('grocery_bill/'+docs.name);
+            }
+    });
+}
+
 exports.reactivateGrocery = function(req, res) {
     console.log("*******");
     console.log(req.params.id);
